@@ -1,0 +1,22 @@
+#!/bin/sh -ex
+
+git reset
+git remote add origin-kernel http://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git || echo "ignore"
+git fetch origin-kernel
+git config --global user.email "you@example.com"
+git config --global user.name "temp"
+git commit -a -m "temp patch if any" || echo "ignore"
+git rebase origin-kernel/master
+make clean ARCH=sim
+make defconfig ARCH=sim
+make library ARCH=sim COV=yes
+cd arch/sim/test
+
+make bake
+cd bake
+hg pull -u
+cd ..
+make testbin
+cd ../../../
+make test ARCH=sim
+cd $WORKSPACE
