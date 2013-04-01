@@ -16,6 +16,7 @@ make bake
 cd bake
 hg pull -u
 cd ..
+make clean -C buildtop/source/quagga
 make testbin
 cd ../../../
 make test ARCH=sim
