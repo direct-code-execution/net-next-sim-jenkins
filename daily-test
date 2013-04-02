@@ -10,7 +10,7 @@ make bake
 cd bake
 hg pull -u
 cd ..
-make clean -C buildtop/source/quagga
+make clean -C buildtop/source/quagga || echo "ignore"
 make testbin
 cd $WORKSPACE
 make test ARCH=sim

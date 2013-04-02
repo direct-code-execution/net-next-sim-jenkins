@@ -17,7 +17,7 @@ make bake
 cd bake
 hg pull -u
 cd ..
-make clean -C buildtop/source/quagga
+make clean -C buildtop/source/quagga || echo "ignore"
 make testbin
 cd $WORKSPACE
 NS_DCE_MPTCP_ENABLE=1 make test ARCH=sim || echo "====== dce-umip test will probably fails..========="
