@@ -20,4 +20,4 @@ cd ..
 make clean -C buildtop/source/quagga || echo "ignore"
 make testbin
 cd $WORKSPACE
-NS_DCE_MPTCP_ENABLE=1 make test ARCH=sim || echo "====== dce-umip test will probably fails..========="
+NS_DCE_MPTCP_ENABLE=1 make test ARCH=sim ADD_PARAM="-r" || echo "====== dce-umip test will probably fails..========="

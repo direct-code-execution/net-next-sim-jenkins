@@ -13,4 +13,4 @@ cd ..
 make clean -C buildtop/source/quagga || echo "ignore"
 make testbin
 cd $WORKSPACE
-make test ARCH=sim
+make test ARCH=sim ADD_PARAM="-r"
