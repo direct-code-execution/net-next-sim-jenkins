@@ -1,6 +1,5 @@
 #!/bin/sh -ex
 
-cd $WORKSPACE
 rm -f lcov_cobertura.py
 wget https://raw.github.com/eriwen/lcov-to-cobertura-xml/master/lcov_cobertura/lcov_cobertura.py
 chmod +x lcov_cobertura.py
