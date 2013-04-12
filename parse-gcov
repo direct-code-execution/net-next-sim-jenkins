@@ -4,7 +4,8 @@ rm -f lcov_cobertura.py
 wget https://raw.github.com/eriwen/lcov-to-cobertura-xml/master/lcov_cobertura/lcov_cobertura.py
 chmod +x lcov_cobertura.py
 
+KERNROOT=`pwd`
 cd arch/sim/test/buildtop/source/ns-3-dce/
-./utils/lcov.sh $WORKSPACE
-cd $WORKSPACE
+./utils/lcov.sh $KERNROOT
+cd ../../../../../../
 ./lcov_cobertura.py arch/sim/test/buildtop/source/ns-3-dce/dce-run.info -o coverage-dce.xml
