@@ -1,7 +1,7 @@
 #!/bin/sh -ex
 
 git reset
-git remote add origin-kernel http://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git || echo "ignore"
+git remote add origin-kernel git://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git || echo "ignore"
 git fetch origin-kernel
 git config --global user.email "you@example.com"
 git config --global user.name "temp"
