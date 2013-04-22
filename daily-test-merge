@@ -17,6 +17,11 @@ cd bake
 hg pull -u
 cd ..
 make clean -C buildtop/source/quagga || echo "ignore"
+if [ -d buildtop ] ; then
+  cd buildtop
+  ../bake/bake.py clean
+fi 
+cd ..
 make testbin
 cd ../../../
 rm -rf arch/sim/test/buildtop/source/ns-3-dce/testpy-output
