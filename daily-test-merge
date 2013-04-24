@@ -16,7 +16,7 @@ make bake
 cd bake
 hg pull -u
 cd ..
-rm -rf testbin
+rm -rf buildtop
 make testbin
 cd ../../../
 rm -rf arch/sim/test/buildtop/source/ns-3-dce/testpy-output
