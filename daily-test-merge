@@ -6,7 +6,8 @@ git fetch origin-kernel
 git config --global user.email "you@example.com"
 git config --global user.name "temp"
 git commit -a -m "temp patch if any" || echo "ignore"
-git rebase origin-kernel/master
+git merge origin-kernel/master
+#git rebase origin-kernel/master
 make clean ARCH=sim
 make defconfig ARCH=sim
 make library ARCH=sim COV=yes
