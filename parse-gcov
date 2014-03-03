@@ -1,7 +1,7 @@
 #!/bin/sh -ex
 
 rm -f lcov_cobertura.py
-wget https://raw.github.com/eriwen/lcov-to-cobertura-xml/master/lcov_cobertura/lcov_cobertura.py
+wget --no-check-certificate https://raw.github.com/eriwen/lcov-to-cobertura-xml/master/lcov_cobertura/lcov_cobertura.py
 chmod +x lcov_cobertura.py
 
 KERNROOT=`pwd`
