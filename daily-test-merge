@@ -18,7 +18,7 @@ cd bake
 hg pull -u
 cd ..
 rm -rf buildtop
-make testbin
+make testbin $(BAKECONF_PARAMS)
 cd ../../../
 rm -rf arch/sim/test/buildtop/source/ns-3-dce/testpy-output
 make test ARCH=sim ADD_PARAM="-r"
