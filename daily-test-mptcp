@@ -3,9 +3,9 @@
 BAKECONF_PARAMS=$1
 #echo "$BAKECONF_PARAMS"
 
-git remote add dce git://github.com/direct-code-execution/net-next-lib.git || echo "ignore"
+git remote add dce git://github.com/direct-code-execution/net-next-sim.git || echo "ignore"
 git fetch dce
-git merge dce/lib-ns3-3.11.0-branch --no-commit
+git merge dce/sim-ns3-3.11.0-branch --no-commit
 
 cat >> arch/lib/defconfig <<END
 CONFIG_MPTCP=y
