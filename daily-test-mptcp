@@ -7,7 +7,7 @@ git remote add dce git://github.com/direct-code-execution/net-next-sim.git || ec
 git fetch dce
 git merge dce/sim-ns3-3.11.0-branch --no-commit
 
-cat >> arch/lib/defconfig <<END
+cat >> arch/sim/defconfig <<END
 CONFIG_MPTCP=y
 CONFIG_MPTCP_PM_ADVANCED=y
 CONFIG_MPTCP_FULLMESH=y
@@ -20,11 +20,11 @@ CONFIG_TCP_CONG_OLIA=y
 
 END
 
-make clean ARCH=lib
-make defconfig ARCH=lib
-make library ARCH=lib COV=yes
+make clean ARCH=sim
+make defconfig ARCH=sim
+make library ARCH=sim COV=yes
 
-cd arch/lib/test
+cd arch/sim/test
 make bake
 cd bake
 hg pull -u
@@ -32,4 +32,4 @@ cd ..
 make clean -C buildtop/source/quagga || echo "ignore"
 make testbin BAKECONF_PARAMS="$BAKECONF_PARAMS"
 cd $WORKSPACE
-make test ARCH=lib ADD_PARAM="-r"
+make test ARCH=sim ADD_PARAM="-r"
