@@ -1,11 +1,11 @@
 #!/bin/sh -ex
 
 git reset
-make clean ARCH=lib
-make defconfig ARCH=lib
-make library ARCH=lib COV=yes
+make clean ARCH=sim
+make defconfig ARCH=sim
+make library ARCH=sim COV=yes
 
-cd arch/lib/test
+cd arch/sim/test
 make bake
 cd bake
 hg pull -u
@@ -13,4 +13,4 @@ cd ..
 make clean -C buildtop/source/quagga || echo "ignore"
 make testbin
 cd $WORKSPACE
-make test ARCH=lib ADD_PARAM="-r"
+make test ARCH=sim ADD_PARAM="-r"
